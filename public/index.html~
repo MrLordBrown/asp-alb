@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="sw-register.js"></script>
+    <script src="cordova.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=zX7gzJYaQ5">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=zX7gzJYaQ5">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=zX7gzJYaQ5">
+    <link rel="manifest" href="/site.webmanifest?v=zX7gzJYaQ5">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg?v=zX7gzJYaQ5" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon.ico?v=zX7gzJYaQ5">
+    <meta name="apple-mobile-web-app-title" content="ASP:ALB">
+    <meta name="application-name" content="ASP:ALB">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Abnormal Listening Behavior by Angry Sock Puppets"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="https://abnormal-listening-behavior.web.app/9.png"/>
+<!--    <meta property="og:image:width" content="314"/>
+    <meta property="og:image:heigth" content="600"/> -->
+    <meta property="og:description" content="Check out 'Abnormal Listening Behavior', the debut album from the band conjured in your parent's worst nightmares, Angry Sock Puppets!"/>
+    <meta property="og:url" content="https://abnormal-listening-behavior.web.app"/>
+    <title>Abnormal Listening Behavior</title>
+    <link href="https://fonts.googleapis.com/css?family=Emilys+Candy&display=swap" rel="stylesheet">
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.2.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.2.2/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.2.2/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.2.2/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.2.2/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <style>
+
+      * {
+      padding: 0;
+      margin: 0;
+      }
+
+      #btns {
+      top:0;
+      left 0;
+      position: fixed;
+      z-index: 0;
+      display: inline-grid;
+      grid-template-areas:
+      "title title title title title"
+      "rw play a mute ff"
+      "s cover cover cover p"
+      "y cover cover cover x"
+      "zz  inst email fb  r";
+      grid-template-columns: 20vw 20vw 20vw 20vw 20vw;
+      grid-template-rows: 20vh 20vh 20vh 20vh 20vh;
+      justify-items: center;
+      align-items: center;
+      }
+      
+      #fb {
+      z-index: 3;
+      width: 5vw;
+      height: auto;
+      grid-area: fb;
+      }
+
+      #inst {
+      z-index: 3;
+      width: 5vw;
+      height: auto;
+      grid-area: inst;
+      }
+     
+      #mask {
+      top: 0;
+      left: 0;
+      position: fixed;
+      z-index: 1;
+      display: grid;
+      grid-template-areas:
+      "b c d e f "
+      "g h i j k"
+      "l m n o q"
+      "t u v w aa"
+      "gg bb cc dd ee";
+      grid-template-columns: 20vw 20vw 20vw 20vw 20vw;
+      grid-template-rows: 20vh 20vh 20vh 20vh 20vh;
+      justify-items: stretch;
+      align-items: stretch;
+      }
+      
+      #b {
+      grid-area: b;
+      animation-name: back;
+      animation-duration: 100s;
+      }
+      
+      #c {
+      grid-area: c;
+      animation-name: back;
+      animation-duration: 120s;
+      }
+      
+      #d {
+      grid-area: d;
+      animation-name: back;
+      animation-duration: 80s;
+      }
+      
+      #e {
+      grid-area: e;
+      animation-name: back;
+      animation-duration: 60s;
+      }
+      
+      #f {
+      grid-area: f;
+      animation-name: back;
+      animation-duration: 20s;
+      }
+      
+      #install  {
+      border: none;
+      background: transparent;
+      cursor: pointer; 
+      text-align: center;
+      height: 100%;
+      width: 100%;
+      }
+      
+      #instpic {
+      height: 50%; 
+      width: auto;
+      padding: 10px 10px 10px 10px;
+      animation-name: color;
+      animation-delay: 8s;
+      animation-duration: 4s;
+      animation-direction: reverse-alternate;
+      animation-iteration-count: infinite;
+    }
+
+      #g {
+      grid-area: g;
+      justify-self: center;
+      align-self: center;
+      animation: color;
+      animation-delay: 8s;
+      animation-duration: 4s;
+      animation-direction: reverse-alternate;
+      animation-iteration-count: infinite;
+      }
+      
+      #h {
+      grid-area: h;
+      justify-self: center;
+      align-self: center;
+      }
+      
+      #i {
+      grid-area: i;
+      text-shadow: 0px 1px 1px #ffffff;
+      font-family: 'Emilys Candy', cursive;
+      font-size: 5vw;
+      align-self: end;
+      justify-self: center;
+      }
+      
+      #j {
+      grid-area: j;
+      justify-self: center;
+      align-self: center;
+      }
+      
+      #k {
+      grid-area: k;
+      justify-self: center;
+      align-self: center;
+      }
+      
+      #l {
+      grid-area: l;
+      text-shadow: 0px 2px 2px #ffffff;
+      font-family: 'Emilys Candy', cursive;
+      font-size: 5vw;
+      align-self: end;
+      justify-self: center;
+      }
+      
+      #m {
+      grid-area: m;
+      animation-name: back;
+      animation-duration: 160s;
+      }
+      
+      #n {
+      grid-area: n;
+      animation-name: back;
+      animation-duration: 20s;
+      }
+      
+      #o {
+      grid-area: o;
+      align-self: center;
+      justify-self: center;
+      animation-name: back;
+      animation-duration: 70s;
+      }
+      
+      #q {
+      grid-area: q;
+      text-shadow: 0px 2px 2px #ffffff;
+      font-family: 'Emilys Candy', cursive;
+      font-size: 5vw;
+      align-self: end;
+      justify-self: center;
+      }
+      
+      #t {
+      grid-area: t;
+      animation-name: back;
+      animation-duration: 200s;
+      }
+      
+      #u {
+      grid-area: u;
+      animation-name: back;
+      animation-duration: 40s;
+      }
+      
+      #v {
+      grid-area: v;
+      animation-name: back;
+      animation-duration: 50s;
+      }
+      
+      #w {
+      grid-area: w;
+      animation-name: back;
+      animation-duration: 130s;
+      }
+      
+      #aa {
+      grid-area: aa;
+      animation-name: back;
+      animation-duration: 20s;
+      }
+
+      #bb {
+      grid-area: bb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation-name: back;
+      animation-duration: 130s;
+         }
+
+      .side {
+      z-index: 2;
+      text-shadow: 1px 1px red;
+      background-color: white;
+      font-size: 1vw;
+      color: black;
+      font-family: "Courier New", serif;
+      opacity: 0;
+      width: 20vw;
+      height:20vh;
+      position: fixed;
+      transition: transform 1s, opacity 1s;
+      transform: rotatey(-90deg);
+      }
+
+      .side:hover {
+      opacity: 1;
+      transform: rotateY(90deg);
+      }
+
+      #asp {
+      top: 40vh;
+      left: 20vh;
+      }
+      
+      #cc {
+      display: flex;
+      grid-area: cc;
+      animation-name: back;
+      justify-content: center;
+      align-items: center;
+      animation-duration: 10s;
+      }
+ 
+      #dd {
+      grid-area: dd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation-name: back;
+      animation-duration: 70s;
+      }
+
+      
+      #ee {
+      grid-area: ee;
+      animation-name: back;
+      animation-duration: 100s;
+      }
+
+            #zz {
+      grid-area: zz;
+      animation-name: back;
+      animation-duration: 100s;
+      }
+
+      #gg {
+      grid-area: gg;
+      animation-name: back;
+      animation-duration: 10s;
+      }
+
+      
+      #rw {
+       justify-self: center;
+      align-self: center;
+      height: auto;
+      grid-area: g;
+      width: 10vw;
+      }
+
+      #play {
+       justify-self: center;
+      align-self: center;
+      grid-area: h;
+      width: 10vw;
+      height: auto;
+      }
+
+      #replay {
+      visibility: hidden;
+      justify-self: center;
+      align-self: center;
+      grid-area: h;
+      width: 10vw;
+      height: auto;
+      }
+
+      #pause {
+      justify-self: center;
+      align-self: center;
+      visibility: hidden;
+      grid-area: h;
+      width: 10vw;
+      height: auto;
+      }
+      
+      #ff {
+      height: auto;
+      width: 10vw;
+      grid-area: k;
+       justify-self: center;
+      align-self: center;
+      }
+
+      #mute {
+      height: auto;
+      width: 10vw;
+      grid-area: j;
+       justify-self: center;
+      align-self: center;
+      }
+      
+      .go {
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+      }
+      
+      #x {
+      animation-name: back;
+      animation-duration: 20s;
+      justify-self: stretch;
+      align-self: stretch;
+      }
+
+       #r {
+      animation-name: back;
+      animation-duration: 40s;
+      justify-self: stretch;
+      align-self: stretch;
+      }
+
+       #y {
+      animation-name: back;
+      animation-duration: 200s;
+      justify-self: stretch;
+      align-self: stretch;
+      }
+     
+      #a {
+      text-shadow: 1px 1px #ffffff;
+      font-family: 'Emilys Candy', cursive;
+      grid-area: a;
+      font-size: 10vw;
+      animation: a,color;
+      animation-delay: 3s;
+      animation-duration: 4s;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+      }
+
+      #s {
+      text-shadow: 1px 1px #ffffff;
+      font-family: 'Emilys Candy', cursive;
+      grid-area: s;
+      font-size: 10vw;
+      align-self: center;
+      justify-self: center;
+      animation: s, color;
+      animation-delay: 6s;
+      animation-duration: 4s;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+      }
+
+      #asp-front, #behave-front, #mailer-front {
+      animation: back;
+      animation-duration: 20s;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+      }
+      
+      #p {
+      text-shadow: 1px 1px #ffffff;
+      font-family: 'Emilys Candy', cursive;
+      grid-area: p;
+      font-size: 10vw;
+      animation: p, color;
+      animation-delay: 9s;
+      animation-duration: 4s;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+}
+
+      #title {
+      text-shadow: 1px 1px #ffffff;
+      grid-area: title;
+      font-size: 3vw;
+      font-family: 'Emilys Candy', cursive;
+      animation-name: see;
+      animation-direction: alternate;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+      animation-fill-mode: backwards;
+      }
+      
+       #sub {
+      text-shadow: 1px 1px #ffffff;
+      grid-area: title;
+      opacity: 0;o;
+      font-size: 3vw;
+      font-family: 'Emilys Candy', cursive;
+      animation-name: see;
+      animation-direction: alternate-reverse;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+      animation-fill-mode: forwards;
+      }
+
+      #mail {
+      text-shadow: 1px 1px #ffffff;
+      font-family: 'Emilys Candy', cursive;
+      grid-area: email;
+      opacity: 1;
+      width: 5vw;
+      height: auto;
+      }
+
+      #mailer  {
+      text-shadow: 1px 1px #ffffff;
+      font-family: 'Emilys Candy', cursive;
+      text-align: center;
+      font-size: 2vw;
+      width: 100%;
+      }
+      
+      #maily {
+      cursor: pointer;
+      width: 10vw;
+      padding: 10vh 5vw 10vh 5vw;; 
+      height: auto;
+      z-index: 1;
+      }
+      
+      
+      #time {
+      position: fixed;
+      z-index: 2;
+      width: 20vw;
+      height:auto;
+      margin-top: 45vh;
+      margin-left: 40vw;
+      }
+      
+      .btn:hover {
+      cursor: pointer;
+      }
+      
+      #unmute {
+      visibility: hidden;
+      grid-area: j;
+      height: auto;
+      width: 10vw;
+      justify-self: center;
+      align-self: center;
+                }
+
+      #cover {
+      grid-area: cover;
+      height: 100%;
+      justify-self: center;
+      align-self: center;
+      background: transparent;
+      max-width: 60vw;
+      }
+
+      .clear {
+      opacity: .4;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+      }
+      
+      main {
+      width: 100vw;
+      height: 100vh;
+      animation: back;
+      animation-iteration-count: infinite;
+      animation-duration: 40s;
+      animation-direction: alternate;
+      animation-delay: 3s;
+      animation-fill-mode: forwards;
+      }
+      
+      @keyframes see {
+      from {opacity: 1;}
+      to {opacity: 0;}
+      }
+
+      .debug {
+      color: #9b59b6;
+      font-family: monospace;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      z-index: 100;
+      font-size: 3vw;
+      }
+      
+      .circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background-color: #9b59b6;
+      border-radius: 50%;
+      width: 25%;
+      height: 0;
+      padding-bottom: 25%;
+      transform: translate3d(-50%, -50%, 0);
+      box-shadow: 0 0 10px rgba(#000, 0.5);
+      }
+      
+      .circle:before {
+      content: "";
+      position: absolute;
+      width: 90%;
+      height: 90%;
+      background-color: #ecf0f1;
+      border-radius: 50%;
+      top: 5%;
+      left: 5%;
+      box-shadow: inset 0 0 10px rgba(#000, 0.5);
+      }
+      
+      .dot {
+      position: absolute;
+      background: green;
+      width: 5%;
+      height: 50%;
+      left: 47.5%;
+      top: 0;
+      transform: rotate(0deg);
+      transform-origin: center bottom;
+}
+      .dot:before {
+      content: "";
+      position: absolute;
+      background: #fff;
+      box-shadow: 0 0 10px #000;
+      width: 200%;
+      transform: translate3d(-25%, -25%, 0);
+      height: 0;
+      padding-bottom: 200%;
+      border-radius: 50%;
+      cursor: pointer;
+      }
+
+      #logo {
+      width: auto !important;
+      background: transparent !important;
+      }
+      
+      #prog {
+      grid-area: title;
+      z-index: 2;
+      width: 20vw;
+      align-self: end;
+      border: 0p solid black;
+      background: black;
+      color: white;
+       }
+
+      #address {
+      text-shadow: 1px 1px #ffffff;
+      font-family: 'Emilys Candy', cursive;
+      visibility: hidden;
+      }
+
+        a {
+      color: white;
+      text-decoration: none;
+      }
+      
+      @keyframes play {
+      from {grid-area: h;}
+      to {grid-area: t;}
+      }
+
+      @keyframes a {
+      from {grid-area: a;}
+      to {grid-area: y;}
+      }
+
+      @keyframes asp {
+      from {grid-area: b;}
+      to {grid-area: f;}
+      }
+
+       @keyframes s {
+      from {grid-area: s;}
+      to {grid-area: r;}
+      }
+
+       @keyframes p {
+      from {grid-area: p;}
+      to {grid-area: x;}
+      }
+
+      @keyframes color {
+      20% {color: #77CC62;}
+      40% {color: #F0D848;}
+      60% {color: #5280C7;}
+      80% {color: #FA8C82;}
+      100% {color: #F23A3A;}
+      }
+
+            @keyframes back {
+      20% {background: #77CC62;}
+      40% {background: #F0D848;}
+      60% {background: #5280C7;}
+      80% {background: #FA8C82;}
+      100% {background: #F23A3A;}
+      }
+
+      </style>
+  </head>
+  <body>
+    <main style="background: #77cc62;">
+      <div id="mask">
+	<div class="clear"  id="f">
+	</div>
+	<div class="clear"  id="c"><img src="9.png" alt="crawler image" style="visibility:hidden;"></div>
+	<div class="clear"  id="d"></div>
+	<div class="clear"  id="e"></div>
+	<div class="clear"  id="g"></div>
+	<div class="clear"  id="k"></div>
+	<div class="clear"  id="i">ngry</div>
+	<div class="clear"  id="l">ock</div>
+	<div class="clear"  id="m"></div>
+	<div class="clear"  id="n"></div>
+	<div class="clear"  id="o"></div>
+	<div class="clear"  id="q">uppets</div>
+	<div class="clear"  id="t"></div>
+	<div class="clear"  id="u"></div>
+	<div class="clear"  id="v"></div>
+	<div class="clear"  id="w"></div>
+	<div class="clear"  id="aa"></div>
+	<div class="clear"  id="bb"><a  href="https://www.instagram.com/angrysockpuppets/"><img id="inst" align="middle" src="inst.png"></a></div>
+	<div class="clear"  id="cc"><a  href="mailto:angry0sock0puppets@gmail.com"><img id="mail" align="middle" src="mail.png"></a></div>
+	<div class="clear"  id="dd"><a  href="https://facebook.com/angrysockpuppets/"><img id="fb" align="middle" src="thumbs.png"></a></div>
+	<div class="clear"  id="ee"></div>
+	<img alt="rewind" id="rw" class="btn" src="rw.png">
+	<img alt="play" id="play" class="btn" src="play.png">
+	<img alt="replay" id="replay" class="btn" src="play.png">
+	<img alt="pause" id="pause" class="btn" src="pause.png">
+	<img alt="unmute" id="unmute" class="btn" src="unmute.png">
+	<img alt="mute" id="mute" class="btn" src="mute.png">
+	<img alt="fast forward" id="ff" class="btn" src="ff.png">
+      </div>
+      <div id="btns">
+	<audio id="audio" style="display:none;"></audio>
+	<div class="go"  id="title">Angry Sock Puppets</div>
+	<div class="go"  id="sub">Abnormal Listening Behavior</div>
+	<progress id="prog" class="go" value="" max=""></progress>
+	<div class="go"  id="a">A</div>
+	<div class="go"  id="s">S</div>
+	<div class="go"  id="p">P</div>
+	<div class="go"  id="x"></div>
+	<div class="go"  id="r"></div>
+	<div class="go"  id="y"></div> 
+	<img id="cover" src="0.png">
+	<div class="go"  id="email" ></div>
+      </div>
+    <!--  <div class="front" id="asp-front"></div>
+      <div class="side" id="asp">Angry Sock Puppet(n): promulgate abnormal listening behaviors throughout your neighborhood.</div>
+      <div class="front" id="mailer-front"></div>
+      <div><a class="side" id="mailer" href="mailto:angry0sock0puppets@gmail.com">angry0sock0puppets@gmail.com<br><img id="maily" src="mail.png"></a></div>     
+      <div class="front" id="behave-front"></div>
+      <div id="behave" class="side">Abnormal Listening Behavior(n): behavioral conditon causing invalid emotional responses.</div>-->
+    </main>
+  </body>
+  <script src="scripts.js"></script>
+</html>

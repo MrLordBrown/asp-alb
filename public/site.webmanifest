@@ -1,0 +1,48 @@
+{
+    "name": "Abnormal Listening Behavior",
+    "short_name": "ASP:ALB",
+    "description" : "The debut album from the Angry Sock Puppets.",
+    "scope" : "/",
+    "display" : "standalone",
+    "orientation" : "portrait",
+    "lang" : "English",
+    "icons": [		
+        {
+            "src": "/android-chrome-192x192.png?v=zX7gzJYaQ5",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-384x384.png?v=zX7gzJYaQ5",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+	{  "src": "/apple-touch-icon.png?v=zX7gzJYaQ5",
+            "sizes": "180x180",
+            "type": "image/png"
+	},
+	{
+	    "src": "/favicon-16x16.png?v=zX7gzJYaQ5",
+            "sizes": "16x16",
+            "type": "image/png"
+	},
+	{  "src": "/favicon-32x32.png?v=zX7gzJYaQ5",
+            "sizes": "32x32",
+           "type": "image/png"
+	},
+	{
+	    "src": "/mstile-150x150.png?v=zX7gzJYaQ5",
+            "sizes": "150x150",
+            "type": "image/png"
+	},
+	{
+	    "src": "/asplogo-512x512.png?v=zX7gzJYaQ5",
+            "sizes": "512x512",
+            "type": "image/png"
+	}
+	
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "start_url": "/"
+}

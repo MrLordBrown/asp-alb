@@ -1,0 +1,34 @@
+{
+   "name": "abnormal-listening-behavior",
+   "version": "0.0.1",
+   "description": "Debut album from Angry Sock Puppets.",
+   "main": "public/index.html",
+   "scripts": {
+      "test": "\"echo \\\"Error: no test specified\\\" && exit 1\"",
+      "sw": "workbox generateSW public/workbox-config.js"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/MrLordBrown/asp-alb.git"
+   },
+   "keywords": [
+      "alternative",
+      "album",
+      "music",
+      "angry",
+      "sock",
+      "puppets",
+      "abnormal",
+      "listening",
+      "behavior"
+   ],
+   "author": "Kryz Braun",
+   "license": "ISC",
+   "bugs": {
+      "url": "https://github.com/MrLordBrown/asp-alb/issues"
+   },
+   "homepage": "https://github.com/MrLordBrown/asp-alb#readme",
+   "devDependencies": {
+      "workbox-build": "^4.3.1"
+   }
+}
