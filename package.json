@@ -30,5 +30,6 @@
    "homepage": "https://github.com/MrLordBrown/asp-alb#readme",
    "devDependencies": {
       "workbox-build": "^4.3.1"
-   }
+   },
+   "dependencies": {}
 }

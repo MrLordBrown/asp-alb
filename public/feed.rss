@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+<channel>
+  <title>Abnormal Listening Behavior</title>
+  <link>https://abnormal-listening-behavior.web.app</link>
+  <description>The debut album from the band, partially imagined and always disillusioned, the Angry Sock Puppets!</description>
+  <copyright>Angry Sock Puppets 2019</copyright>
+  <image>https://abnormal-listening-behavior.web.app/0.png</image>
+  <link>https://abnormal-listening-behavior.web.app/feed.xml</link>
+  <pubDate>November 19, 2019</pubDate>
+  <item>
+    <title>Stabalize</title>
+    <category>audio</category>
+    <link>https://abnormal-listening-behavior.web.app/01-Stabalize.mp3</link>
+    <description>Track 1</description>
+    <guid>ASP-ALB-01-01</guid>
+    <pubDate>November 19, 2019</pubDate>
+    <enclosure url="https://abnormal-listening-behavior.web.app/01-Stabalize.mp3" length="2611873" type="audio/mpeg"/>      
+  </item>
+  <item>
+    <title>Asterix</title>
+    <author>Angry Sock Puppets</author>
+    <category>audio</category>
+    <link>https://abnormal-listening-behavior.web.app/02-Asterix.mp3</link>
+    <description>Track 2</description>
+    <guid>ASP-ALB-02-01</guid>
+    <pubDate>November 19, 2019</pubDate>
+    <enclosure url="https://abnormal-listening-behavior.web.app/02-Asterix.mp3" length="3387418" type="audio/mpeg"/>      
+  </item>
+  <item>
+    <title>Aloha</title>
+    <author>Angry Sock Puppets</author>
+    <category>audio</category>
+    <link>https://abnormal-listening-behavior.web.app/03-Aloha.mp3</link>
+    <description>Track 3</description>
+    <guid>ASP-ALB-03-01</guid>
+    <pubDate>November 19, 2019</pubDate>
+    <enclosure url="https://abnormal-listening-behavior.web.app/03-Aloha.mp3" length="5147488" type="audio/mpeg"/>      
+  </item>
+  <item>
+    <title>Johnny Undertow, Part 1 (Queen of the Sky)</title>
+    <category>audio</category>
+    <link>https://abnormal-listening-behavior.web.app/04-QueenOfTheSky.mp3</link>
+    <description>Track 4</description>
+    <guid>ASP-ALB-04-01</guid>
+    <pubDate>November 19, 2019</pubDate>
+    <enclosure url="https://abnormal-listening-behavior.web.app/04-QueenOfTheSky.mp3" length="4168854" type="audio/mpeg"/>
+  </item>
+  <item>
+    <title>Johnny Undertow, Part 2 (Queen of the Moon)</title>
+    <category>audio</category>
+    <link>https://abnormal-listening-behavior.web.app/05-QueenOfTheMoon.mp3</link>
+    <description>Track 5</description>
+    <guid>ASP-ALB-05-01</guid>
+    <pubDate>November 19, 2019</pubDate>
+    <enclosure url="https://abnormal-listening-behavior.web.app/05-QueenOfTheMoon.mp3" length="6119735" type="audio/mpeg"/>      
+  </item>
+  <item>
+    <title>Johnny Undertow, Part 3 (Son of the Earth)</title>
+    <category>audio</category>
+    <link>https://abnormal-listening-behavior.web.app/06-SonOfTheEarth.mp3</link>
+    <description>Track 6</description>
+ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss    <guid>ASP-ALB-06-01</guid>
+    <pubDate>November 19, 2019</pubDate>
+    <enclosure url="https://abnormal-listening-behavior.web.app/01-SonOfTheEarth.mp3" length="5653568" type="audio/mpeg"/>      
+  </item>
+  <item>
+    <title>Asphalt</title>
+    <category>audio</category>
+    <link>https://abnormal-listening-behavior.web.app/07-Asphalt.mp3</link>
+    <description>Track 7</description>
+    <guid>ASP-ALB-07-01</guid>
+    <pubDate>November 19, 2019</pubDate>
+    <enclosure url="https://abnormal-listening-behavior.web.app/07-Asphalt.mp3" length="3417488" type="audio/mpeg"/>      
+  </item>
+  <item>
+    <title>Garden Witch</title>
+    <category>audio</category>
+    <link>https://abnormal-listening-behavior.web.app/01-GardenWitch.mp3</link>
+    <description>Track 8</description>
+    <guid>ASP-ALB-08-01</guid>
+    <pubDate>November 19, 2019</pubDate>
+    <enclosure url="https://abnormal-listening-behavior.web.app/08-GardenWitch.mp3" length="3417488" type="audio/mpeg"/>      
+  </item>
+  <item>
+    <title>Abnormal Listening Behavior</title>
+    <category>audio</category>
+    <link>https://abnormal-listening-behavior.web.app/09-AbnormalListeningBehavior.mp3</link>
+    <description>Track 9</description>
+    <guid>ASP-ALB-09-01</guid>
+    <pubDate>November 19, 2019</pubDate>
+    <enclosure url="https://abnormal-listening-behavior.web.app/09-AbnormalListeningBehavior.mp3" length="8534281" type="audio/mpeg"/>      
+  </item>
+</channel>
+
+</rss>

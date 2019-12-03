@@ -9,6 +9,7 @@
     <link rel="manifest" href="/site.webmanifest?v=zX7gzJYaQ5">
     <link rel="mask-icon" href="/safari-pinned-tab.svg?v=zX7gzJYaQ5" color="#5bbad5">
     <link rel="shortcut icon" href="/favicon.ico?v=zX7gzJYaQ5">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="feed.rss">
     <meta name="apple-mobile-web-app-title" content="ASP:ALB">
     <meta name="application-name" content="ASP:ALB">
     <meta name="msapplication-TileColor" content="#da532c">
@@ -52,7 +53,7 @@
       "rw play a mute ff"
       "s cover cover cover p"
       "y cover cover cover x"
-      "zz  inst email fb  r";
+      "rss  inst email fb  r";
       grid-template-columns: 20vw 20vw 20vw 20vw 20vw;
       grid-template-rows: 20vh 20vh 20vh 20vh 20vh;
       justify-items: center;
@@ -64,6 +65,13 @@
       width: 5vw;
       height: auto;
       grid-area: fb;
+      }
+
+       #rss {
+      z-index: 3;
+      width: 5vw;
+      height: auto;
+      grid-area:rss;
       }
 
       #inst {
@@ -306,14 +314,17 @@
       animation-duration: 100s;
       }
 
-            #zz {
-      grid-area: zz;
+            #gg {
+      grid-area: gg;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       animation-name: back;
-      animation-duration: 100s;
+      animation-duration: 400s;
       }
 
-      #gg {
-      grid-area: gg;
+      #zz {
+      grid-area: zz;
       animation-name: back;
       animation-duration: 10s;
       }
@@ -696,6 +707,7 @@
 	<div class="clear"  id="bb"><a  href="https://www.instagram.com/angrysockpuppets/"><img id="inst" align="middle" src="inst.png"></a></div>
 	<div class="clear"  id="cc"><a  href="mailto:angry0sock0puppets@gmail.com"><img id="mail" align="middle" src="mail.png"></a></div>
 	<div class="clear"  id="dd"><a  href="https://facebook.com/angrysockpuppets/"><img id="fb" align="middle" src="thumbs.png"></a></div>
+	<div class="clear" id="gg"><a href="feed.rss"><img id="rss" align="middle" src="rss.gif"></a></div> 
 	<div class="clear"  id="ee"></div>
 	<img alt="rewind" id="rw" class="btn" src="rw.png">
 	<img alt="play" id="play" class="btn" src="play.png">
@@ -727,5 +739,5 @@
       <div id="behave" class="side">Abnormal Listening Behavior(n): behavioral conditon causing invalid emotional responses.</div>-->
     </main>
   </body>
-  <script src="scripts.js"></script>
+  <script type="module" src="scripts.js"></script>
 </html>

@@ -130,6 +130,10 @@ self.__precacheManifest = [
     "revision": "92d1be81eb1aeec5e4c1a0b2de148388"
   },
   {
+    "url": "feed.rss",
+    "revision": "4c5cba2b82994c0f73796dd62164498b"
+  },
+  {
     "url": "ff.png",
     "revision": "8ff29016bdc61a09eef1df6ad96d5915"
   },
@@ -159,7 +163,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "848e380aca12db63fb7e02623d96e883"
+    "revision": "fa7ea5b86d999d759c5bfbbf4106bc4b"
   },
   {
     "url": "inst.png",
@@ -188,6 +192,10 @@ self.__precacheManifest = [
   {
     "url": "play.png",
     "revision": "5a9f2d08f11dc631e372fafd8f2236b6"
+  },
+  {
+    "url": "rss.gif",
+    "revision": "4f1a6fe5b219673b2644bd22c3713016"
   },
   {
     "url": "rw.png",
@@ -243,7 +251,7 @@ self.__precacheManifest = [
   },
   {
     "url": "scripts.js",
-    "revision": "bae4cecb1f577f34778596fb99f5e634"
+    "revision": "35eb9054defffd3624f80438f80fc79f"
   },
   {
     "url": "site.webmanifest",
@@ -255,7 +263,7 @@ self.__precacheManifest = [
   },
   {
     "url": "sw-register.js",
-    "revision": "823ac73f3605f882abb9f349b165c1ba"
+    "revision": "7128cfe9ea69c9058d2dcf29fa3c798a"
   },
   {
     "url": "thumb.png",
@@ -271,11 +279,11 @@ self.__precacheManifest = [
   },
   {
     "url": "workbox-build.js",
-    "revision": "378ab2dcf2c9aa687185ee569b47ba12"
+    "revision": "f7f2d8c47f5a1bcc35ef734985b22192"
   },
   {
     "url": "workbox-config.js",
-    "revision": "02d4d007cf4cf9d1d557397ff9fead35"
+    "revision": "e79f92149b80dcfe6df8d4f15013a799"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});

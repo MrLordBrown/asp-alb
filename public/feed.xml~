@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+<channel>
+  <title>Abnormal Listening Behavior</title>
+  <link>https://abnormal-listening-behavior.web.app</link>
+  <description>The debut album from the band, partially imagined and always disillusioned, the Angry Sock Puppets!</description>
+  <copyright>Angry Sock Puppets 2019</copyright>
+  <image>https://abnormal-listening-behavior.web.app/0.png</image>
+  <link>https://abnormal-listening-behavior.web.app/feed.xml</link>
+  <pubDate>November 19, 2019</pubDate>
+  <item>
+    <title>Stabalize</title>
+    <category>audio</category>
+    <link>https://abnormal-listening-behavior.web.app/01Stabalize.mp3</link>
+    <description>New RSS tutorial on W3Schools</description>
+  </item>
+  <item>
+    <title>XML Tutorial</title>
+    <link>https://www.w3schools.com/xml</link>
+    <description>New XML tutorial on W3Schools</description>
+  </item>
+</channel>
+
+</rss>

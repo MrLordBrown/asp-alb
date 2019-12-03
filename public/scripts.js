@@ -100,7 +100,7 @@ music.ontimeupdate = function() {
 	}
 });
 */
-	       
+
 var items = [
     "01-Stabalize.mp3",
     "02-Asterix.mp3",
@@ -247,7 +247,7 @@ function next() {
     document.getElementById("title").innerHTML = names[current];
     document.getElementById("pause").style.visibility = "visible";
     cover();
-};
+}
 
 function cover() {
     var f = current + 1;
@@ -289,7 +289,7 @@ function previous() {
     document.getElementById("title").innerHTML = names[current];
     document.getElementById("pause").style.visibility = "visible";
     cover();
-};
+}
 
 /*function previous2() {
     if (current === 0) {
@@ -319,7 +319,7 @@ function muteIt() {
 	document.getElementById("mute").style.visibility = "hidden";
 	document.getElementById("unmute").style.visibility = "visible";
     }
-};
+}
 
 /*function muteIt2() {
     if(playlistPlayer.muted === true) {
@@ -361,7 +361,7 @@ function replayIt() {
     jump();
 }
 */
-    
+
 function pauseIt() {
     playlistPlayer.pause();
     document.getElementById("replay").style.visibility = "visible";

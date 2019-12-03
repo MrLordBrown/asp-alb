@@ -1,9 +1,9 @@
-const workboxBuild = require('workbox-build');
+import workboxBuild from 'workbox-build';
 
 workboxBuild.generateSW({
     swDest: 'sw.js',
-    globDirectory: 'public/'
-    globPatterns: '**/*.{png,mp3,ico,html,js,webmanifest}',
+    globDirectory: 'public/',
+    globPatterns: '**/*.{png,mp3,ico,html,js,webmanifest}'
 })
 .then(() => {
     console.log(`Generated new service worker.`);
