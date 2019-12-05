@@ -33,30 +33,45 @@ document.getElementById("mute").addEventListener("click", muteIt);
 document.getElementById("audio").addEventListener("ended", next);
 document.getElementById("pause").addEventListener("click", pauseIt);
 document.getElementById("unmute").addEventListener("click",muteIt);
+document.getElementById("prog").addEventListener("mousedown", function(event){seeking=true;seekIt(event);});
+document.getElementById("prog").addEventListener("mousemove",function(event){seekIt(event);});
+document.getElementById("prog").addEventListener("mouseup",function(){seeking=false;});
 
-var sound = document.getElementById("audio");
+var seeking=false;
+var seekTo;
+var seekSlider = document.getElementById("prog");
 
+    function seekIt(event) {
+	if(seeking) {
+	    seekSlider.value = event.clientX-seekSlider.offsetLeft;
+	    seekTo=sound.duration*(seekSlider.value/100);
+	    sound.currentTime=seekTo;
+	}
+    }
+    
+    var sound = document.getElementById("audio");
+    
 sound.onloadstart = function() {
     document.getElementById("bb").innerHtml = "Audio Loading";
     console.log("Audio Loading");
 }
-
-sound.ondurationchange = function() {
-    var dur = sound.duration;
-    document.getElementById("bb").innerHtml = "Length: "+dur;
-    console.log(dur);
-}
-
-sound.onprogress=function() {
- document.getElementById("bb").innerHtml = "Audio Downloading";
-    console.log("progress");
-}
-
-sound.oncanplay=function() {
-    document.getElementById("bb").innerHtml = "Audio Ready";
-    console.log("Audio Ready");
-}
-
+    
+    sound.ondurationchange = function() {
+	var dur = sound.duration;
+	document.getElementById("bb").innerHtml = "Length: "+dur;
+	console.log(dur);
+    }
+    
+    sound.onprogress=function() {
+	document.getElementById("bb").innerHtml = "Audio Downloading";
+	console.log("progress");
+    }
+    
+    sound.oncanplay=function() {
+	document.getElementById("bb").innerHtml = "Audio Ready";
+	console.log("Audio Ready");
+    }
+    
 sound.oncanplaythrough=function() {
     document.getElementById("bb").innerHtml = "Audio Download Complete";
     console.log("done");
@@ -80,7 +95,6 @@ music.ontimeupdate = function() {
 	    document.getElementById("sub").innerHTML = Math.floor(secs/60)+":"+Math.floor(secs%60);
 	}
     }
-    console.log(currentTime);
     return currentTime;
 }
 /*var bLazy = new Blazy({
@@ -232,6 +246,8 @@ var current = 0;
 
 var playlistPlayer = document.querySelector("#audio");
 var paused;
+var progBar = document.querySelector('#prog');
+
 document.getElementById("play").addEventListener("click", playIt);
 document.getElementById("replay").addEventListener("click", replayIt);
 
@@ -243,6 +259,7 @@ function next() {
     }
     playlistPlayer.src = items[current];
     playlistPlayer.play();
+    progBar.style.visibility = "visible";
     document.getElementById("play").style.visibility = "hidden";
     document.getElementById("title").innerHTML = names[current];
     document.getElementById("pause").style.visibility = "visible";
@@ -285,6 +302,7 @@ function previous() {
     }
     playlistPlayer.src = items[current];
     playlistPlayer.play();
+    progBar.style.visibility = "visible";
     document.getElementById("play").style.visibility = "hidden";
     document.getElementById("title").innerHTML = names[current];
     document.getElementById("pause").style.visibility = "visible";

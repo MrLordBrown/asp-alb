@@ -113,6 +113,7 @@
       
       #d {
       grid-area: d;
+      justify-self: end;
       animation-name: back;
       animation-duration: 80s;
       }
@@ -591,6 +592,17 @@
       box-shadow: inset 0 0 10px rgba(#000, 0.5);
       }
       
+      #goTo {
+      position: absolute;
+      z-index: 5;
+      height: 2vh;
+      width: 4vw;
+      opacity: .2;
+      color: white;
+      font-family: 'Emilys Candy', cursive;
+      font-size: 1vh;
+      }
+      
       .dot {
       position: absolute;
       background: green;
@@ -620,14 +632,14 @@
       }
       
       #prog {
-      grid-area: title;
+      cursor: e-resize;
+      grid-area: d;
       z-index: 2;
       width: 20vw;
       align-self: end;
-      border: 0p solid black;
       background: black;
       color: white;
-       }
+      }
 
       #address {
       text-shadow: 1px 1px #ffffff;
@@ -689,7 +701,8 @@
 	<div class="clear"  id="f">
 	</div>
 	<div class="clear"  id="c"><img src="9.png" alt="crawler image" style="visibility:hidden;"></div>
-	<div class="clear"  id="d"></div>
+	<div class="clear"  id="d"><progress id="prog" class="btn" value="" max=""></progress>
+</div>
 	<div class="clear"  id="e"></div>
 	<div class="clear"  id="g"></div>
 	<div class="clear"  id="k"></div>
@@ -721,7 +734,6 @@
 	<audio id="audio" style="display:none;"></audio>
 	<div class="go"  id="title">Angry Sock Puppets</div>
 	<div class="go"  id="sub">Abnormal Listening Behavior</div>
-	<progress id="prog" class="go" value="" max=""></progress>
 	<div class="go"  id="a">A</div>
 	<div class="go"  id="s">S</div>
 	<div class="go"  id="p">P</div>
